@@ -1,0 +1,9 @@
+.eslintignore
+.eslinrc
+.prettierignore
+.prettierrc
+.stylelintignore
+.stylelintrc
+dev/
+.vscode/
+*.vsix

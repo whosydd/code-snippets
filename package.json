@@ -1,20 +1,17 @@
 {
-  "name": "gy-snippets",
-  "displayName": "gy snippets",
-  "description": "",
+  "name": "code-snippets",
+  "displayName": "Code Snippets",
+  "description": "Code snippets for JavaScript",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.53.0"
   },
   "publisher": "GY",
-  "homepage": "https://github.com/whosydd/gy-snippets",
+  "homepage": "https://github.com/whosydd/code-snippets",
   "repository": {
     "type": "git",
-    "url": "https://github.com/whosydd/gy-snippets"
+    "url": "https://github.com/whosydd/code-snippets"
   },
-  "files": [
-    "snippets"
-  ],
   "license": "MIT",
   "categories": [
     "Snippets"
@@ -23,15 +20,11 @@
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets/javascript"
+        "path": "./snippets/javascript.json"
       },
       {
         "language": "html",
-        "path": "./snippets/html"
-      },
-      {
-        "language": "css",
-        "path": "./snippets/css"
+        "path": "./snippets/javascript.json"
       }
     ]
   },

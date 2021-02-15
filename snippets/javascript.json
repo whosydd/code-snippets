@@ -1,13 +1,13 @@
 {
-  "alert": {
-    "prefix": "alert",
-    "body": "alert('${1:msg}')$0",
-    "description": "Code snippet for 'alert'"
-  },
   "use strict": {
     "prefix": "strict",
     "body": "'use strict'$0",
     "description": "Code snippet for 'use strict'"
+  },
+  "alert": {
+    "prefix": "alert",
+    "body": "alert('${1:msg}')$0",
+    "description": "Code snippet for 'alert'"
   },
   "comment.big.block": {
     "prefix": "cmm",
@@ -23,6 +23,11 @@
     "prefix": "iife",
     "body": ["(function($1) {", "\t$0", "})($1)"],
     "description": "Code snippet for immediately-invoked function expression"
+  },
+  "this": {
+    "prefix": "this",
+    "body": ["this.$1 = $1"],
+    "description": "Code snippet for this"
   },
   "function as a property of an object": {
     "prefix": "ofn",
@@ -57,84 +62,39 @@
   },
   // dom
   "getElementById": {
-    "prefix": "gbi",
-    "body": "${1:document}.getElementById('${2:id}')$0",
+    "prefix": "gid",
+    "body": "document.getElementById('${1:id}')$0",
     "description": "Code snippet for \"getElementById\""
   },
   "getElementsByClassName": {
-    "prefix": "gbc",
-    "body": "${1:document}.getElementsByClassName('${2:class}')$0",
+    "prefix": "gcl",
+    "body": "document.getElementsByClassName('${1:class}')$0",
     "description": "Code snippet for \"getElementsByClassName\""
   },
   "getElementsByTagName": {
-    "prefix": "gbt",
-    "body": "${1:document}.getElementsByTagName('${2:tag}')$0",
+    "prefix": "gtag",
+    "body": "document.getElementsByTagName('${1:tag}')$0",
     "description": "Code snippet for \"getElementsByTagName\""
   },
-  "getAttribute": {
-    "prefix": "getattr",
-    "body": "${1:document}.getAttribute('${2:attr}')$0",
-    "description": "Code snippet for \"getAttribute\""
-  },
-  "setAttribute": {
-    "prefix": "setattr",
-    "body": "${1:document}.setAttribute('${2:attr}', ${3:value})$0",
-    "description": "Code snippet for \"setAttribute\""
-  },
-  "removeAttribute": {
-    "prefix": "rmattr",
-    "body": "${1:document}.removeAttribute('${2:attr}')$0",
-    "description": "Code snippet for \"removeAttribute\""
-  },
-  "innerHTML": {
-    "prefix": "innerHTML",
-    "body": "${1:document}.innerHTML = '${2:elem}'$0",
-    "description": "Code snippet for \"innerHTML\""
-  },
   "addEventListener": {
-    "prefix": "ael",
-    "body": ["addEventListener('${1:load}', $0)"],
+    "prefix": ".al",
+    "body": [".addEventListener('${1:load}', function () {\n\t${2://}\n})$0"],
     "description": "Code snippet for \"addEventListener\""
   },
   "querySelector": {
     "prefix": "qs",
-    "body": "${1:document}.querySelector('$0')",
+    "body": "document.querySelector('${1}')$0",
     "description": "Code snippet for \"querySelector\""
-  },
-  "querySelectAddEvent": {
-    "prefix": "qsael",
-    "body": ["${1:document}.querySelector('$2').addEventListener('${3:load}', $0)"],
-    "description": "Code snippet for \"querySelectorAndAddEvent\""
   },
   "querySelectorAll": {
     "prefix": "qsa",
-    "body": "${1:document}.querySelectorAll('$2')$0",
+    "body": "document.querySelectorAll('$1')$0",
     "description": "Code snippet for \"querySelectorAll\""
-  },
-  "appendChild": {
-    "prefix": "adc",
-    "body": "${1:document}.appendChild($2)$0",
-    "description": "Code snippet for \"appendChild\""
-  },
-  "removeChild": {
-    "prefix": "rmc",
-    "body": "${1:document}.removeChild($2)$0",
-    "description": "Code snippet for \"removeChild\""
   },
   "createElement": {
     "prefix": "ce",
-    "body": "${1:document}.createElement('$2')$0",
+    "body": "document.createElement('$1')$0",
     "description": "Code snippet for \"createElement\""
-  },
-  "createTextNode": {
-    "prefix": "ctn",
-    "body": "${1:document}.createTextNode('$2')$0",
-    "description": "Code snippet for \"createTextNode\""
-  },
-  "createDocumentFragment": {
-    "prefix": "cdf",
-    "body": "${1:document}.createDocumentFragment()$0",
-    "description": "Code snippet for \"createDocumentFragment\""
   },
   // es6
   "immediately-invoked function expression": {
@@ -149,17 +109,17 @@
   },
   "forOf": {
     "prefix": "fof",
-    "body": "for (const ${1:item} of ${2:array/string}) {\n\t${3://consider forin for enumerable objects}\n}$0",
+    "body": "for (const ${1:item} of ${2:array/string}) {\n\t${3://}\n}$0",
     "description": "Iterating over property names of iterable objects"
   },
   "forIn": {
     "prefix": "fin",
-    "body": "for (const ${1:item} in ${2:object}) {\n\t${3://consider forof for iterable array/string}\n}$0",
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${3://}\n}$0",
     "description": "Iterating over property values of iterable objects"
   },
   "forEach": {
     "prefix": "feach",
-    "body": "${1:array}.forEach(${2:item} => {\n\t$3\n})$0",
+    "body": "${1:array}.forEach(${2:item} => {\n\t${3://}\n})$0",
     "description": "Creates a forEach statement in ES6 syntax"
   },
   "anonymousFunction": {
@@ -179,12 +139,12 @@
   },
   "setInterval": {
     "prefix": "sti",
-    "body": "setInterval(() => {\n\t${2}\n}, ${1:intervalInms})",
+    "body": "setInterval(() => {\n\t${2://}\n}, ${1:intervalInms})$0",
     "description": "Executes the given function at specified intervals in ES6 syntax"
   },
   "setTimeOut": {
     "prefix": "sto",
-    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
+    "body": "setTimeout(() => {\n\t${2://}\n}, ${1:delayInms})$0",
     "description": "Executes the given function after the specified delay in ES6 syntax"
   },
   "JSON.parse": {
@@ -212,22 +172,22 @@
   // promise
   "promise": {
     "prefix": "prom",
-    "body": "const promise = new Promise((resolve, reject) => {\n\t${1}\n})$0",
+    "body": "const promise = new Promise((resolve, reject) => {\n\t${1://}\n})$0",
     "description": "Creates and returns a new Promise in the standard ES6 syntax"
   },
   "return promise": {
     "prefix": "reprom",
-    "body": "return new Promise((resolve, reject) => {\n\t${1}\n})$0",
+    "body": "return new Promise((resolve, reject) => {\n\t${1://}\n})$0",
     "description": "Creates and returns a new Promise in the standard ES6 syntax"
   },
   "thenCatch": {
     "prefix": "thenc",
-    "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
+    "body": ".then((${1:result}) => {\n\t${2://}\n}).catch((${3:err}) => {\n\t${4://}\n})",
     "description": "Add the .then and .catch methods to handle promises"
   },
   "promiseTC": {
     "prefix": "promtc",
-    "body": "const promise = new Promise((resolve, reject) => {\n\t${1}\n}).then((${2:result}) => {\n\t${3}\n}).catch((${4:err}) => {\n\t${5}\n})$0",
+    "body": "const promise = new Promise((resolve, reject) => {\n\t${1}\n}).then((${2:result}) => {\n\t${3://}\n}).catch((${4:err}) => {\n\t${5://}\n})$0",
     "description": "Creates and returns a new Promise in the standard ES6 syntax"
   }
   // async&await
