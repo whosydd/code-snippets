@@ -13,6 +13,8 @@ node_modules
 
 .stylelintrc
 
-.vscode/
+.vscode
 
-dev/
+dev
+
+.vscodeignore
