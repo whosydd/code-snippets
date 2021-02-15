@@ -1,0 +1,234 @@
+{
+  "alert": {
+    "prefix": "alert",
+    "body": "alert('${1:msg}')$0",
+    "description": "Code snippet for 'alert'"
+  },
+  "use strict": {
+    "prefix": "strict",
+    "body": "'use strict'$0",
+    "description": "Code snippet for 'use strict'"
+  },
+  "comment.big.block": {
+    "prefix": "cmm",
+    "body": [
+      "/**",
+      "|--------------------------------------------------",
+      "| $0",
+      "|--------------------------------------------------",
+      "*/"
+    ]
+  },
+  "immediately-invoked function expression ES5": {
+    "prefix": "iife",
+    "body": ["(function($1) {", "\t$0", "})($1)"],
+    "description": "Code snippet for immediately-invoked function expression"
+  },
+  "function as a property of an object": {
+    "prefix": "ofn",
+    "body": ["${1:functionName}: function(${2:arguments}) {", "\t$0", "}"],
+    "description": "Code snippet for function as a property of an object"
+  },
+  // console
+  "consoleClear": {
+    "prefix": "cclear",
+    "body": "console.clear()",
+    "description": "Clears the console"
+  },
+  "consoleDir": {
+    "prefix": "cdir",
+    "body": "console.dir(${1:object})",
+    "description": "Prints a JavaScript representation of the specified object"
+  },
+  "consoleError": {
+    "prefix": "cerror",
+    "body": "console.error(${1:object})",
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
+  },
+  "consoleLog": {
+    "prefix": "clog",
+    "body": "console.log($0)",
+    "description": "Displays a message in the console"
+  },
+  "consoleInfo": {
+    "prefix": "cinfo",
+    "body": "console.info(${1:object})",
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+  // dom
+  "getElementById": {
+    "prefix": "gbi",
+    "body": "${1:document}.getElementById('${2:id}')$0",
+    "description": "Code snippet for \"getElementById\""
+  },
+  "getElementsByClassName": {
+    "prefix": "gbc",
+    "body": "${1:document}.getElementsByClassName('${2:class}')$0",
+    "description": "Code snippet for \"getElementsByClassName\""
+  },
+  "getElementsByTagName": {
+    "prefix": "gbt",
+    "body": "${1:document}.getElementsByTagName('${2:tag}')$0",
+    "description": "Code snippet for \"getElementsByTagName\""
+  },
+  "getAttribute": {
+    "prefix": "getattr",
+    "body": "${1:document}.getAttribute('${2:attr}')$0",
+    "description": "Code snippet for \"getAttribute\""
+  },
+  "setAttribute": {
+    "prefix": "setattr",
+    "body": "${1:document}.setAttribute('${2:attr}', ${3:value})$0",
+    "description": "Code snippet for \"setAttribute\""
+  },
+  "removeAttribute": {
+    "prefix": "rmattr",
+    "body": "${1:document}.removeAttribute('${2:attr}')$0",
+    "description": "Code snippet for \"removeAttribute\""
+  },
+  "innerHTML": {
+    "prefix": "innerHTML",
+    "body": "${1:document}.innerHTML = '${2:elem}'$0",
+    "description": "Code snippet for \"innerHTML\""
+  },
+  "addEventListener": {
+    "prefix": "ael",
+    "body": ["addEventListener('${1:load}', $0)"],
+    "description": "Code snippet for \"addEventListener\""
+  },
+  "querySelector": {
+    "prefix": "qs",
+    "body": "${1:document}.querySelector('$0')",
+    "description": "Code snippet for \"querySelector\""
+  },
+  "querySelectAddEvent": {
+    "prefix": "qsael",
+    "body": ["${1:document}.querySelector('$2').addEventListener('${3:load}', $0)"],
+    "description": "Code snippet for \"querySelectorAndAddEvent\""
+  },
+  "querySelectorAll": {
+    "prefix": "qsa",
+    "body": "${1:document}.querySelectorAll('$2')$0",
+    "description": "Code snippet for \"querySelectorAll\""
+  },
+  "appendChild": {
+    "prefix": "adc",
+    "body": "${1:document}.appendChild($2)$0",
+    "description": "Code snippet for \"appendChild\""
+  },
+  "removeChild": {
+    "prefix": "rmc",
+    "body": "${1:document}.removeChild($2)$0",
+    "description": "Code snippet for \"removeChild\""
+  },
+  "createElement": {
+    "prefix": "ce",
+    "body": "${1:document}.createElement('$2')$0",
+    "description": "Code snippet for \"createElement\""
+  },
+  "createTextNode": {
+    "prefix": "ctn",
+    "body": "${1:document}.createTextNode('$2')$0",
+    "description": "Code snippet for \"createTextNode\""
+  },
+  "createDocumentFragment": {
+    "prefix": "cdf",
+    "body": "${1:document}.createDocumentFragment()$0",
+    "description": "Code snippet for \"createDocumentFragment\""
+  },
+  // es6
+  "immediately-invoked function expression": {
+    "prefix": "iifeES6",
+    "body": ["(($1) => {", "\t$0", "})($1)"],
+    "description": "Code snippet for immediately-invoked function expression"
+  },
+  "require": {
+    "prefix": "req",
+    "body": "const ${1:package} = require('${1:package}')$0",
+    "description": "Require a package"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": "for (const ${1:item} of ${2:array/string}) {\n\t${3://consider forin for enumerable objects}\n}$0",
+    "description": "Iterating over property names of iterable objects"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${3://consider forof for iterable array/string}\n}$0",
+    "description": "Iterating over property values of iterable objects"
+  },
+  "forEach": {
+    "prefix": "feach",
+    "body": "${1:array}.forEach(${2:item} => {\n\t$3\n})$0",
+    "description": "Creates a forEach statement in ES6 syntax"
+  },
+  "anonymousFunction": {
+    "prefix": "afn",
+    "body": "(${1:params}) => {\n\t${2}\n}$0",
+    "description": "Creates an anonymous function in ES6 syntax"
+  },
+  "namedFunction": {
+    "prefix": "cfn",
+    "body": "const ${1:name} = ${2:arg} => $0",
+    "description": "Creates a named function in ES6 syntax"
+  },
+  "namedFunction2": {
+    "prefix": "cfnn",
+    "body": "const ${1:name} = (${2:params}) => {\n\t$0\n}",
+    "description": "Creates a named function in ES6 syntax"
+  },
+  "setInterval": {
+    "prefix": "sti",
+    "body": "setInterval(() => {\n\t${2}\n}, ${1:intervalInms})",
+    "description": "Executes the given function at specified intervals in ES6 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "sto",
+    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
+    "description": "Executes the given function after the specified delay in ES6 syntax"
+  },
+  "JSON.parse": {
+    "prefix": "jparse",
+    "body": "JSON.parse(${1:obj})$0",
+    "description": "Code snippet for 'JSON.parse'"
+  },
+  "JSON.stringify": {
+    "prefix": "jstr",
+    "body": "JSON.stringify(${1:obj})$0",
+    "description": "Code snippet for 'JSON.stringify'"
+  },
+  // express
+  "express": {
+    "prefix": "express",
+    "body": [
+      "const express = require('express')",
+      "const app = express()",
+      "const port = process.env.PORT || ${1:5000}\n",
+      "app.get('/', (req, res) => res.send('Hey there!'))\n",
+      "app.listen(port, () => { console.log(`Server has started on port \\${port\\}!!!`) })"
+    ],
+    "description": "Express boiler plate"
+  },
+  // promise
+  "promise": {
+    "prefix": "prom",
+    "body": "const promise = new Promise((resolve, reject) => {\n\t${1}\n})$0",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax"
+  },
+  "return promise": {
+    "prefix": "reprom",
+    "body": "return new Promise((resolve, reject) => {\n\t${1}\n})$0",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax"
+  },
+  "thenCatch": {
+    "prefix": "thenc",
+    "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
+    "description": "Add the .then and .catch methods to handle promises"
+  },
+  "promiseTC": {
+    "prefix": "promtc",
+    "body": "const promise = new Promise((resolve, reject) => {\n\t${1}\n}).then((${2:result}) => {\n\t${3}\n}).catch((${4:err}) => {\n\t${5}\n})$0",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax"
+  }
+  // async&await
+}
