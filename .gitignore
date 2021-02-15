@@ -1,20 +1,6 @@
 node_modules
 *.vsix
 
-.eslintignore
-
-.eslintrc
-
-.prettierignore
-
-.prettierrc
-
-.stylelintignore
-
-.stylelintrc
-
-.vscode
-
-dev
+dev/
 
 .vscodeignore
