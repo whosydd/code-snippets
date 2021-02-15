@@ -6,6 +6,16 @@
   "engines": {
     "vscode": "^1.53.0"
   },
+  "publisher": "GY",
+  "homepage": "https://github.com/whosydd/gy-snippets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whosydd/gy-snippets"
+  },
+  "files": [
+    "snippets"
+  ],
+  "license": "MIT",
   "categories": [
     "Snippets"
   ],
