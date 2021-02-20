@@ -16,11 +16,12 @@
   "categories": [
     "Snippets"
   ],
+  "icon": "icon/coding.png",
   "contributes": {
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets/javascript.json"
+        "path": "snippets/javascript.json"
       }
     ]
   }
