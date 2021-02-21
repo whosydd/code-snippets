@@ -6,8 +6,7 @@
   },
   "alert": {
     "prefix": "alert",
-    "body": "alert('${1:msg}')$0",
-    "description": "Code snippet for 'alert'"
+    "body": "alert('${1:msg}')$0"
   },
   "comment.big.block": {
     "prefix": "cmm",
@@ -26,13 +25,22 @@
   },
   "this": {
     "prefix": "this",
-    "body": ["this.$1 = $1"],
-    "description": "Code snippet for this"
+    "body": ["this.$1 = $1"]
   },
   "function as a property of an object": {
     "prefix": "ofn",
     "body": ["${1:functionName}: function(${2:arguments}) {", "\t$0", "}"],
     "description": "Code snippet for function as a property of an object"
+  },
+  "require": {
+    "prefix": "req",
+    "body": "const ${1:package} = require('${1:package}')$0",
+    "description": "Require a package"
+  },
+  "moduleExports": {
+    "prefix": "mex",
+    "body": "module.exports = {\n\t$0\n}\n",
+    "description": "Module exports from Common JS"
   },
   // console
   "consoleClear": {
@@ -102,10 +110,42 @@
     "body": ["(($1) => {", "\t$0", "})($1)"],
     "description": "Code snippet for immediately-invoked function expression"
   },
-  "require": {
-    "prefix": "req",
-    "body": "const ${1:package} = require('${1:package}')$0",
-    "description": "Require a package"
+  "import": {
+    "prefix": "imp",
+    "body": "import ${1:moduleName} from '${2:module}'$0",
+    "description": "Import a module using ES6 Modules"
+  },
+  "importNoModuleName": {
+    "prefix": "imn",
+    "body": "import '${1:module}'$0",
+    "description": "Import an ES6 module with no name"
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": "import {$2 } from '${1:module}'$0",
+    "description": "Imports only a portion of a module using ES6 modules"
+  },
+  "importEverything": {
+    "prefix": "ime",
+    "body": "import * as ${1:alias} from '${2:module}'$0",
+    "description": "Import everything using its own alias using ES6 modules"
+  },
+  "importAs": {
+    "prefix": "ima",
+    "body": "import { ${1:originalName} as ${2:alias} } from '${3:module}'$0"
+  },
+
+  "exportDefault": {
+    "prefix": "exd",
+    "body": "export default $0"
+  },
+  "exportDestructing": {
+    "prefix": "ex",
+    "body": "export { $1 } from '${2:module}'$0"
+  },
+  "exportAs": {
+    "prefix": "exa",
+    "body": "export { ${1:originalName} as ${2:alias} } from '${3:module}'$0"
   },
   "forOf": {
     "prefix": "fof",
@@ -190,5 +230,4 @@
     "body": "const promise = new Promise((resolve, reject) => {\n\t${1}\n}).then((${2:result}) => {\n\t${3://}\n}).catch((${4:err}) => {\n\t${5://}\n})$0",
     "description": "Creates and returns a new Promise in the standard ES6 syntax"
   }
-  // async&await
 }
