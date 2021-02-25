@@ -6,7 +6,7 @@
   "engines": {
     "vscode": "^1.53.0"
   },
-  "publisher": "GY",
+  "publisher": "whosydd",
   "homepage": "https://github.com/whosydd/code-snippets",
   "repository": {
     "type": "git",

@@ -4,10 +4,6 @@
     "body": "'use strict'$0",
     "description": "Code snippet for 'use strict'"
   },
-  "alert": {
-    "prefix": "alert",
-    "body": "alert('${1:msg}')$0"
-  },
   "comment.big.block": {
     "prefix": "cmm",
     "body": [
@@ -147,6 +143,10 @@
     "prefix": "exa",
     "body": "export { ${1:originalName} as ${2:alias} } from '${3:module}'$0"
   },
+  "const": {
+    "prefix": "cst",
+    "body": "const ${1} = ${1}"
+  },
   "forOf": {
     "prefix": "fof",
     "body": "for (const ${1:item} of ${2:array/string}) {\n\t${3://}\n}$0",
@@ -212,16 +212,16 @@
   // promise
   "promise": {
     "prefix": "prom",
-    "body": "const promise = new Promise((resolve, reject) => {\n\t${1://}\n})$0",
+    "body": "new Promise((resolve, reject) => {\n\t${1://}\n})$0",
     "description": "Creates and returns a new Promise in the standard ES6 syntax"
   },
   "return promise": {
-    "prefix": "reprom",
+    "prefix": "rprom",
     "body": "return new Promise((resolve, reject) => {\n\t${1://}\n})$0",
     "description": "Creates and returns a new Promise in the standard ES6 syntax"
   },
   "thenCatch": {
-    "prefix": "thenc",
+    "prefix": ".thenc",
     "body": ".then((${1:result}) => {\n\t${2://}\n}).catch((${3:err}) => {\n\t${4://}\n})",
     "description": "Add the .then and .catch methods to handle promises"
   },
